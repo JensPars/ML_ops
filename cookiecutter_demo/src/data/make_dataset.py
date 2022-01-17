@@ -3,6 +3,8 @@ import click
 import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
+import numpy as np
+import idx2numpy
 
 
 @click.command()
@@ -14,6 +16,12 @@ def main(input_filepath, output_filepath):
     """
     logger = logging.getLogger(__name__)
     logger.info('making final data set from raw data')
+    path = input_filepath + '/train-images-idx3-ubyte'
+    img = idx2numpy.convert_from_file(path)
+    path = input_filepath + '/train-labels-idx1-ubyte'
+    classes = idx2numpy.convert_from_file(path)
+    np.save(output_filepath + '/imgs',img)
+    np.save(output_filepath + '/classes',classes)
 
 
 if __name__ == '__main__':
