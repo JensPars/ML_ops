@@ -1,9 +1,15 @@
+import os
+import sys
+sys.path.append(os.path.abspath('../..'))
+
 from model import *
 from src.data.dataset import Dataset
 import torch.optim as optim
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader
 import torch
+
+
 
 trainset = Dataset()
 trainset.__len__ = 1000
@@ -21,5 +27,6 @@ for e in range(epochs):
         optimizer.step()
         optimizer.zero_grad()
         running_loss += loss.item()
+        print('a')
     else:
         print(f"Training loss: {running_loss/len(trainloader)}")
