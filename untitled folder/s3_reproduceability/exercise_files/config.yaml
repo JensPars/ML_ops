@@ -1,0 +1,8 @@
+hyperparameters:
+  batch_size: 64
+  learning_rate: 1e-4
+  n_hidden: 100
+  latent_dim: 2
+  seed : 5 # Setting the seed is not enough (I think) beacause the random intitialized
+  # weights varry from computer to computer using fixed initialized weights would be better 
+  # (i.e. including them in the config)

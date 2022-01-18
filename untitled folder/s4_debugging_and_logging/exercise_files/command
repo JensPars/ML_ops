@@ -1,0 +1,6 @@
+python -m cProfile -o "profile" vae_mnist_pytorch_profiler_solution.py
+
+# tottime is the total time spent in the function alone. cumtime is the total time spent in the function plus all functions that this function called.
+
+
+snakeviz profile.prof

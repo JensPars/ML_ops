@@ -1,0 +1,13 @@
+source activate my_env
+##
+conda env list
+##
+conda list
+##
+conda env export > environment.yaml
+##
+pip install pipreqs
+
+pipreqs /path/to/project
+
+pip3 freeze > requirements.txt
